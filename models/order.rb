@@ -7,9 +7,10 @@ class Order
 
   attr_accessor :material, :items
 
-  def initialize(material)
+  def initialize(material, cost_calculator_class = OrderCostCalculator)
     self.material = material
     self.items = []
+    @order_cost_calculator_class = cost_calculator_class
   end
 
   def add(broadcaster, delivery)
@@ -17,7 +18,7 @@ class Order
   end
 
   def total_cost
-    items.inject(0) { |memo, (_, delivery)| memo += delivery.price }
+    @order_cost_calculator_class.new(items).final_cost
   end
 
   def output
