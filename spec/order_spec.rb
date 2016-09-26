@@ -25,5 +25,17 @@ describe Order do
 
       expect(subject.total_cost).to eq(30)
     end
+
+    it 'returns the total discounted cost of all items' do
+      broadcaster_1 = Broadcaster.new(1, 'Viacom')
+      broadcaster_2 = Broadcaster.new(2, 'Disney')
+
+      subject.add broadcaster_1, express_delivery
+      subject.add broadcaster_2, express_delivery
+
+      p subject
+
+      expect(subject.total_cost).to eq(30)
+    end
   end
 end

@@ -16,7 +16,6 @@ class OrderCostCalculator
     subtotal * ((100 - discount_percent_on_final_cost) / 100.0 )
   end
 
-
 private
 
   def discount_percent_on_final_cost
