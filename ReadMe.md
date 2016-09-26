@@ -14,3 +14,8 @@ I've decided to implement the functionality creating a new model called: ```Orde
 The responsibility of computing the total cost is then moved to the new model.
 
 OrderCostCalculator implements one method for every type of discount, and a final_cost method, that will take care of using those two methods to compute the discounted price.
+
+#### Test Branch
+
+After completing the challenge, I have actually thought of another approach, that is reflected the in the branch "test-different-approach".
+In this case the OrderCostCalculator actually modifies every delivery item that needs to be discounted, and has only the final_cost method as its public interface.
